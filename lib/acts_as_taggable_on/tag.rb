@@ -1,7 +1,9 @@
 module ActsAsTaggableOn
   class Tag < ::ActiveRecord::Base
+    
+    set_table_name "tags_app"
+    
     include ActsAsTaggableOn::ActiveRecord::Backports if ::ActiveRecord::VERSION::MAJOR < 3
-  
     attr_accessible :name
 
     ### ASSOCIATIONS:
